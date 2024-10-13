@@ -39,7 +39,6 @@ void insertend() {
   temp->next = newnode;
 }
 
-
 void display() {
   node *temp = start;
   if (start == NULL) {
@@ -54,7 +53,6 @@ void display() {
   }
   printf("\n");
 }
-
 
 void deletekey() {
   node *prev;
