@@ -62,5 +62,6 @@ int main() {
       exit(0);
     }
   }
+  free(stack);
   return 0;
 }
