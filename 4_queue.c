@@ -14,6 +14,7 @@ void enqueue(int ele) {
   }
   rear = (rear + 1) % max;
   queue[rear] = ele;
+  count++;
 }
 
 int dequeue() {
@@ -23,6 +24,7 @@ int dequeue() {
   }
   int ele = queue[front];
   front = (front + 1) % max;
+  count--;
   return ele;
 }
 
