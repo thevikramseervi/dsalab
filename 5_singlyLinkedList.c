@@ -91,7 +91,7 @@ int main() {
     printf("2 - display\n");
     printf("3 - delete students based on COC/COB\n");
     printf("4 - adding students from lateral entry/COC/COB\n");
-    printf("5 - exit\n");
+    printf("5 - exit\n\n");
     scanf("%d", &choice);
     switch (choice) {
     case 1:
