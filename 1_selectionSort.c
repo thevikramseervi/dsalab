@@ -37,5 +37,7 @@ int main() {
     printf("%d ", a[i]);
   }
 
+  free(a);
+
   return 0;
 }
