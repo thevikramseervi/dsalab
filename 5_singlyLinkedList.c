@@ -68,6 +68,7 @@ void deletekey() {
     start = start->next;
     printf("Deleted USN: %d\n", temp->usn);
     free(temp);
+    return;
   }
   while (temp != NULL && temp->usn != key) {
     prev = temp;
