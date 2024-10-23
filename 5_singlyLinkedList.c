@@ -68,19 +68,18 @@ void deletekey() {
     start = start->next;
     printf("Deleted USN: %d\n", temp->usn);
     free(temp);
-  } else {
-    while (temp != NULL && temp->usn != key) {
-      prev = temp;
-      temp = temp->next;
-    }
-    if (temp == NULL) {
-      printf("USN is not found so can't delete.\n");
-      return;
-    }
-    prev->next = temp->next;
-    printf("Deleted USN: %d\n", temp->usn);
-    free(temp);
   }
+  while (temp != NULL && temp->usn != key) {
+    prev = temp;
+    temp = temp->next;
+  }
+  if (temp == NULL) {
+    printf("USN is not found so can't delete.\n");
+    return;
+  }
+  prev->next = temp->next;
+  printf("Deleted USN: %d\n", temp->usn);
+  free(temp);
 }
 
 int main() {
