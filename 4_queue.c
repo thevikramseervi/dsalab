@@ -7,34 +7,41 @@ int rear = -1;
 int front = 0;
 int count = 0;
 
-void enqueue(int ele) {
+void enqueue() {
+  int ele;
   if (count == max) {
     printf("Overflow Error.\n");
     return;
   }
+  printf("Enter the element to enqueue: ");
+  scanf("%d", &ele);
   rear = (rear + 1) % max;
   queue[rear] = ele;
   count++;
 }
 
-int dequeue() {
+void dequeue() {
+  int ele;
   if (count == 0) {
     printf("Underflow Error.\n");
-    return -9999;
+    return;
   }
-  int ele = queue[front];
+  ele = queue[front];
   front = (front + 1) % max;
+  printf("Deleted element is %d\n", ele);
   count--;
-  return ele;
 }
 
 void display() {
+  int i, k;
   if (count == 0) {
     printf("Queue is empty.\n");
     return;
   }
-  for (int i = front; i != rear; i = (i + 1) % max) {
-    printf("%d ", queue[i]);
+  k = front;
+  for (i = 0; i < count; i++) {
+    printf("%d ", queue[k]);
+    k = (k + 1) % max;
   }
   printf("\n");
 }
@@ -49,13 +56,10 @@ int main() {
     scanf("%d", &choice);
     switch (choice) {
     case 1:
-      printf("Enter element to push: ");
-      scanf("%d", &ele);
-      enqueue(ele);
+      enqueue();
       break;
     case 2:
-      ele = dequeue();
-      printf("The dequeued element is %d.\n", ele);
+      dequeue();
       break;
     case 3:
       display();
