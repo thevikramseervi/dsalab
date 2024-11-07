@@ -95,7 +95,7 @@ void printtree(node *root, int space, int n) {
   for (i = n; i < space; i++) {
     printf(" ");
   }
-  printf("(%d)\n", root->key, space);
+  printf("(%d)\n", root->key);
   printtree(root->left, space, n);
 }
 
